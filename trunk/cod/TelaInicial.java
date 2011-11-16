@@ -24,22 +24,16 @@ public class TelaInicial extends javax.swing.JFrame {
         menu2 = new java.awt.Menu();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPopupMenu2 = new javax.swing.JPopupMenu();
+        jFileChooser1 = new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
-        removerUser = new javax.swing.JButton();
-        removerDepart = new javax.swing.JButton();
-        removerCurso = new javax.swing.JButton();
-        removerDisci = new javax.swing.JButton();
-        removerTurma = new javax.swing.JButton();
         pesquisar = new javax.swing.JButton();
-        cadastrarUser = new javax.swing.JButton();
-        cadastarDepart = new javax.swing.JButton();
-        cadastrarCurso = new javax.swing.JButton();
-        cadastrarDisci = new javax.swing.JButton();
-        cadastrarTurma = new javax.swing.JButton();
         logoff = new javax.swing.JButton();
+        cadastrar = new javax.swing.JButton();
+        remover = new javax.swing.JButton();
+        alterar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -50,58 +44,13 @@ public class TelaInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(java.awt.SystemColor.activeCaption);
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Menu ALOKA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Menu ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
 
-        removerUser.setFont(new java.awt.Font("Tahoma", 1, 12));
-        removerUser.setText("Remover Usuario");
-
-        removerDepart.setFont(new java.awt.Font("Tahoma", 1, 12));
-        removerDepart.setText("Remover Departamento");
-
-        removerCurso.setFont(new java.awt.Font("Tahoma", 1, 12));
-        removerCurso.setText("Remover Curso");
-
-        removerDisci.setFont(new java.awt.Font("Tahoma", 1, 12));
-        removerDisci.setText("Remover Disciplina");
-
-        removerTurma.setFont(new java.awt.Font("Tahoma", 1, 12));
-        removerTurma.setText("Remover Turma");
-
-        pesquisar.setFont(new java.awt.Font("Tahoma", 1, 12));
+        pesquisar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         pesquisar.setText("Pesquisar");
         pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pesquisarActionPerformed(evt);
-            }
-        });
-
-        cadastrarUser.setFont(new java.awt.Font("Tahoma", 1, 12));
-        cadastrarUser.setText("Cadastrar Usuario");
-        cadastrarUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarUserActionPerformed(evt);
-            }
-        });
-
-        cadastarDepart.setFont(new java.awt.Font("Tahoma", 1, 12));
-        cadastarDepart.setText("Cadastrar Departamento");
-        cadastarDepart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastarDepartActionPerformed(evt);
-            }
-        });
-
-        cadastrarCurso.setFont(new java.awt.Font("Tahoma", 1, 12));
-        cadastrarCurso.setText("Cadastrar Curso");
-
-        cadastrarDisci.setFont(new java.awt.Font("Tahoma", 1, 12));
-        cadastrarDisci.setText("Cadastrar Disciplina");
-
-        cadastrarTurma.setFont(new java.awt.Font("Tahoma", 1, 12));
-        cadastrarTurma.setText("Cadastrar Turma");
-        cadastrarTurma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarTurmaActionPerformed(evt);
             }
         });
 
@@ -113,68 +62,71 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
+        cadastrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadastrar.setText("Cadastrar");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarActionPerformed(evt);
+            }
+        });
+
+        remover.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        remover.setText("Remover");
+
+        alterar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        alterar.setText("Alterar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logoff)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cadastrarDisci, 0, 0, Short.MAX_VALUE)
-                            .addComponent(cadastrarUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cadastrarTurma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cadastrarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cadastarDepart))
+                        .addComponent(cadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(removerDepart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(removerCurso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                            .addComponent(removerDisci, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                            .addComponent(removerUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                            .addComponent(removerTurma, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE))
-                        .addGap(133, 133, 133)
-                        .addComponent(pesquisar))
-                    .addComponent(logoff, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addComponent(remover)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pesquisar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(cadastrarUser)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cadastarDepart)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cadastrarCurso)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cadastrarDisci)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cadastrarTurma))
-                        .addComponent(pesquisar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(removerDepart)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(removerUser)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(removerCurso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(removerDisci)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(removerTurma)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cadastrar)
+                    .addComponent(remover)
+                    .addComponent(alterar)
+                    .addComponent(pesquisar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addComponent(logoff)
-                .addGap(23, 23, 23))
+                .addContainerGap())
         );
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jMenu1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jMenu1.setText("Opções");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jRadioButtonMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItem1.setBackground(java.awt.SystemColor.activeCaptionBorder);
+        jRadioButtonMenuItem1.setText("Sair");
+        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jRadioButtonMenuItem1);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -182,31 +134,19 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void cadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarTurmaActionPerformed
-// TODO 
-}//GEN-LAST:event_cadastrarTurmaActionPerformed
-
-private void cadastrarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUserActionPerformed
-new CadastropProfessor().setVisible(true);
-}//GEN-LAST:event_cadastrarUserActionPerformed
-
 private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
 new Pesquisar().setVisible(true);
 }//GEN-LAST:event_pesquisarActionPerformed
-
-private void cadastarDepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastarDepartActionPerformed
-// TODO 
-}//GEN-LAST:event_cadastarDepartActionPerformed
 
 private void logoffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffActionPerformed
 int opçao = 0;
@@ -215,7 +155,22 @@ opçao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fazer logof
         new Login().setVisible(true);
     TelaInicial.this.setVisible (false);}
 }//GEN-LAST:event_logoffActionPerformed
+//cadastrar 
+private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+new Cadastrar().setVisible(true);
+}//GEN-LAST:event_cadastrarActionPerformed
+//menu - opçoes
+private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
 
+}//GEN-LAST:event_jMenu1ActionPerformed
+//sair
+private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+int opçao = 0;
+opçao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "Atenção!", JOptionPane.YES_NO_OPTION);
+    if (opçao == JOptionPane.YES_OPTION){
+        System.exit(0);}
+}//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+//Botão sair
 
     public static void main(String args[]) {
       
@@ -251,26 +206,20 @@ opçao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fazer logof
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cadastarDepart;
-    private javax.swing.JButton cadastrarCurso;
-    private javax.swing.JButton cadastrarDisci;
-    private javax.swing.JButton cadastrarTurma;
-    private javax.swing.JButton cadastrarUser;
+    private javax.swing.JButton alterar;
+    private javax.swing.JButton cadastrar;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JButton logoff;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;
     private javax.swing.JButton pesquisar;
-    private javax.swing.JButton removerCurso;
-    private javax.swing.JButton removerDepart;
-    private javax.swing.JButton removerDisci;
-    private javax.swing.JButton removerTurma;
-    private javax.swing.JButton removerUser;
+    private javax.swing.JButton remover;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,23 +1,28 @@
+
+package aloka;
+
+// @author Marcus Vinicius
+ 
 class ClasseAuxiliar {
     
     
 
     void setText(String text) {
-        throw new UnsupportedOperationException("Não ta implementado");
+        throw new UnsupportedOperationException("NÃ£o ta implementado");
     }
 
     void setComboBox(String string) {
-        throw new UnsupportedOperationException("Não ta implementado");
+        throw new UnsupportedOperationException("NÃ£o ta implementado");
     }
     
     void setComboBox2(String string) {
-        throw new UnsupportedOperationException("Não ta implementado");
+        throw new UnsupportedOperationException("NÃ£o ta implementado");
     }
 
     String getLimpo() {
-        throw new UnsupportedOperationException("Não implementado");
+        throw new UnsupportedOperationException("NÃ£o implementado");
     }
       String setLimpo() {
-        throw new UnsupportedOperationException("Não implementado");
+        throw new UnsupportedOperationException("NÃ£o implementado");
     }
 }

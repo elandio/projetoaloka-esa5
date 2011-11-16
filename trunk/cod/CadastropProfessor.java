@@ -53,7 +53,7 @@ public class CadastropProfessor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         painelCadastroProf.setBackground(java.awt.SystemColor.activeCaption);
-        painelCadastroProf.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Cadastro de Professor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
+        painelCadastroProf.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Cadastro de Professor ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
         painelCadastroProf.setToolTipText("");
         painelCadastroProf.setName(""); // NOI18N
 

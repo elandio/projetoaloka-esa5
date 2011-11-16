@@ -48,7 +48,7 @@ public class CadastroSecretario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         painelCadastroSec.setBackground(java.awt.SystemColor.activeCaption);
-        painelCadastroSec.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Cadastro de Secretario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
+        painelCadastroSec.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Cadastro de Secretario ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
         painelCadastroSec.setToolTipText("");
         painelCadastroSec.setName(""); // NOI18N
 
@@ -156,8 +156,13 @@ public class CadastroSecretario extends javax.swing.JFrame {
             }
         });
 
-        Secretario.setFont(new java.awt.Font("Tahoma", 1, 12));
+        Secretario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Secretario.setText("Secretario");
+        Secretario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SecretarioActionPerformed(evt);
+            }
+        });
 
         Professor.setFont(new java.awt.Font("Tahoma", 1, 12));
         Professor.setText("Professor");
@@ -372,6 +377,10 @@ CadastroSecretario.this.setVisible(false); //Deixar janela atual invisivel.
 private void telefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoneActionPerformed
 obj.setText(telefone.getText());
 }//GEN-LAST:event_telefoneActionPerformed
+
+private void SecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecretarioActionPerformed
+// TODO 
+}//GEN-LAST:event_SecretarioActionPerformed
 
     public static void main(String args[]) {
     

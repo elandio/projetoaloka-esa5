@@ -46,7 +46,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1.setBackground(java.awt.SystemColor.activeCaption);
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Menu ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
 
-        pesquisar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pesquisar.setFont(new java.awt.Font("Tahoma", 1, 12));
         pesquisar.setText("Pesquisar");
         pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,7 +54,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        logoff.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        logoff.setFont(new java.awt.Font("Tahoma", 1, 12));
         logoff.setText("Logoff");
         logoff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,9 +72,19 @@ public class TelaInicial extends javax.swing.JFrame {
 
         remover.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         remover.setText("Remover");
+        remover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removerActionPerformed(evt);
+            }
+        });
 
         alterar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         alterar.setText("Alterar");
+        alterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -170,6 +180,14 @@ opçao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "At
     if (opçao == JOptionPane.YES_OPTION){
         System.exit(0);}
 }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
+private void removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerActionPerformed
+new Remover().setVisible(true);
+}//GEN-LAST:event_removerActionPerformed
+
+private void alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarActionPerformed
+new Alterar().setVisible(true);
+}//GEN-LAST:event_alterarActionPerformed
 //Botão sair
 
     public static void main(String args[]) {

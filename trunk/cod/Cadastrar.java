@@ -1,6 +1,8 @@
 
 package aloka;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Marcus Vinicius
@@ -23,6 +25,10 @@ public class Cadastrar extends javax.swing.JFrame {
         cadastrarCurso = new javax.swing.JButton();
         cadastrarDisci = new javax.swing.JButton();
         cadastrarTurma = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -30,7 +36,7 @@ public class Cadastrar extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar - ALOKA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 14))); // NOI18N
         jPanel1.setForeground(java.awt.SystemColor.activeCaptionBorder);
 
-        cadastrarUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadastrarUser.setFont(new java.awt.Font("Tahoma", 1, 12));
         cadastrarUser.setText("Cadastrar Usuario");
         cadastrarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -38,7 +44,7 @@ public class Cadastrar extends javax.swing.JFrame {
             }
         });
 
-        cadastarDepart.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadastarDepart.setFont(new java.awt.Font("Tahoma", 1, 12));
         cadastarDepart.setText("Cadastrar Departamento");
         cadastarDepart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +58,7 @@ public class Cadastrar extends javax.swing.JFrame {
         cadastrarDisci.setFont(new java.awt.Font("Tahoma", 1, 12));
         cadastrarDisci.setText("Cadastrar Disciplina");
 
-        cadastrarTurma.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadastrarTurma.setFont(new java.awt.Font("Tahoma", 1, 12));
         cadastrarTurma.setText("Cadastrar Turma");
         cadastrarTurma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +95,37 @@ public class Cadastrar extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jMenu1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jMenu1.setText("Opções");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+
+        jRadioButtonMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
+        jRadioButtonMenuItem1.setBackground(java.awt.SystemColor.activeCaptionBorder);
+        jRadioButtonMenuItem1.setText("Sair");
+        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jRadioButtonMenuItem1);
+
+        jRadioButtonMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, 0));
+        jRadioButtonMenuItem2.setText("Voltar");
+        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jRadioButtonMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,6 +156,21 @@ private void cadastarDepartActionPerformed(java.awt.event.ActionEvent evt) {//GE
 private void cadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarTurmaActionPerformed
 // TODO 
 }//GEN-LAST:event_cadastrarTurmaActionPerformed
+
+private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+int opçao = 0;
+opçao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "Atenção!", JOptionPane.YES_NO_OPTION);
+    if (opçao == JOptionPane.YES_OPTION){
+        System.exit(0);}
+}//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
+private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+
+}//GEN-LAST:event_jMenu1ActionPerformed
+
+private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
+Cadastrar.this.setVisible(false);
+}//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
 
    
     public static void main(String args[]) {
@@ -160,6 +212,10 @@ private void cadastrarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GE
     private javax.swing.JButton cadastrarDisci;
     private javax.swing.JButton cadastrarTurma;
     private javax.swing.JButton cadastrarUser;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

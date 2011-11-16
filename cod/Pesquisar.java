@@ -26,9 +26,9 @@ public class Pesquisar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(java.awt.SystemColor.activeCaption);
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pesquisa ALOKA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 12))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Pesquisar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 14))); // NOI18N
 
-        pesquisarUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pesquisarUser.setFont(new java.awt.Font("Tahoma", 1, 12));
         pesquisarUser.setText("Usuario");
 
         pesquisarDepart.setFont(new java.awt.Font("Tahoma", 1, 12));
@@ -37,7 +37,7 @@ public class Pesquisar extends javax.swing.JFrame {
         pesquisarCurso.setFont(new java.awt.Font("Tahoma", 1, 12));
         pesquisarCurso.setText("Curso");
 
-        pesquisarDisci.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pesquisarDisci.setFont(new java.awt.Font("Tahoma", 1, 12));
         pesquisarDisci.setText("Disciplina");
 
         pesquisarTurma.setFont(new java.awt.Font("Tahoma", 1, 12));
@@ -75,7 +75,7 @@ public class Pesquisar extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pesquisarDisci)
                     .addComponent(pesquisarTurma))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

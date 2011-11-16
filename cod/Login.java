@@ -1,3 +1,7 @@
+package aloka;
+
+//@author Marcus Vinicius
+
 import javax.swing.JOptionPane;
 
  
@@ -23,7 +27,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        painelLogin.setBackground(java.awt.SystemColor.textHighlight);
+        painelLogin.setBackground(java.awt.SystemColor.activeCaption);
         painelLogin.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
         painelLogin.setName(""); // NOI18N
 
@@ -66,7 +70,7 @@ public class Login extends javax.swing.JFrame {
         painelLoginLayout.setHorizontalGroup(
             painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoginLayout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
@@ -110,23 +114,22 @@ public class Login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-//Bot„o de entrar
+//Bot√£o de entrar
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-new CadastropProfessor().setVisible(true); //Chamar janela cadastro. (forma mais simples)
+new TelaInicial().setVisible(true); //Chamar janela cadastro. (forma mais simples)
 Login.this.setVisible(false); //Deixar classe atual invisivel.
 }//GEN-LAST:event_jButton1ActionPerformed
-//Bot„o de sair
+//Bot√£o de sair
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-int opcao = 0;
-opcao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "AtenÁ„o!", JOptionPane.YES_NO_OPTION);
-    if (opcao == JOptionPane.YES_OPTION){
+int op√ßao = 0;
+op√ßao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "Aten√ß√£o!", JOptionPane.YES_NO_OPTION);
+    if (op√ßao == JOptionPane.YES_OPTION){
         System.exit(0);}
 }//GEN-LAST:event_jButton2ActionPerformed
 

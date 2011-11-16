@@ -1,3 +1,5 @@
+package aloka;
+
 import javax.swing.JOptionPane;
 
 // @author Marcus Vinicius
@@ -13,6 +15,9 @@ public class CadastroSecretario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         painelCadastroSec = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -36,10 +41,13 @@ public class CadastroSecretario extends javax.swing.JFrame {
         telefone = new javax.swing.JTextField();
         Secretario = new javax.swing.JToggleButton();
         Professor = new javax.swing.JToggleButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        painelCadastroSec.setBackground(java.awt.SystemColor.textHighlight);
+        painelCadastroSec.setBackground(java.awt.SystemColor.activeCaption);
         painelCadastroSec.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ALOKA - Cadastro de Secretario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 3, 16))); // NOI18N
         painelCadastroSec.setToolTipText("");
         painelCadastroSec.setName(""); // NOI18N
@@ -262,21 +270,23 @@ public class CadastroSecretario extends javax.swing.JFrame {
                 .addGap(11, 11, 11))
         );
 
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(painelCadastroSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+            .addComponent(painelCadastroSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(painelCadastroSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+            .addComponent(painelCadastroSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -314,7 +324,7 @@ private void matriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     obj.setText(matricula.getText());
 
 }//GEN-LAST:event_matriculaActionPerformed
-//Bot„o Salvar
+//Bot√£o Salvar
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 //int showConfirmDialog = JOptionPane.showConfirmDialog(null, "Tem certeza que vai realizar mesmo seu cadastro?");
    // if (password == cpassword) {  //tentativa de ocmparar caracteres
@@ -326,15 +336,15 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     */ 
 
 }//GEN-LAST:event_jButton1ActionPerformed
-//Bot„o Cancelar
+//Bot√£o Cancelar
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    int opcao = 0;
-    opcao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja cancelar?", "AtenÁ„o!", JOptionPane.YES_NO_OPTION);
-    if (opcao == JOptionPane.YES_OPTION) {
+    int op√ßao = 0;
+    op√ßao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja cancelar?", "Aten√ß√£o!", JOptionPane.YES_NO_OPTION);
+    if (op√ßao == JOptionPane.YES_OPTION) {
         System.exit(0);
     }
 }//GEN-LAST:event_jButton3ActionPerformed
-//Bot„o limpar
+//Bot√£o limpar
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     username.setText("");
     password.setText("");
@@ -395,6 +405,9 @@ obj.setText(telefone.getText());
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Professor;
     private javax.swing.JToggleButton Secretario;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JTextField cpassword;
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
@@ -410,6 +423,9 @@ obj.setText(telefone.getText());
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTextField matricula;
     private javax.swing.JTextField nome;
     private javax.swing.JPanel painelCadastroSec;

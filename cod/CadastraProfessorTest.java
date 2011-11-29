@@ -16,6 +16,6 @@ public class CadastraProfessorTest {
 		professores.add(p);
 		assertTrue(p.getUsername()=="professor");
 		assertTrue(professores.size()==1);
-		}
+	}
 
 }

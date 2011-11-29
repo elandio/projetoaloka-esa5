@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ArquivarProf {
+public class ArquivarDepartamento {
 	
 	ObjectOutputStream out;
 	ObjectInputStream in;
-	private final String FILENAME = "Professores.bin";
+	private final String FILENAME = "Departamentos.bin";
 	
 	File file;
 	
-	public ArquivarProf(){
+	public ArquivarDepartamento(){
 		
 		file = new File(FILENAME);
 		try {
@@ -30,11 +30,11 @@ public class ArquivarProf {
 		}
 	}
 	
-	public void salvar(List<Professor> Professores){
+	public void salvar(List<Departamento> departamentos){
 		try{
 			if(file.exists()){
 				out = new ObjectOutputStream(new FileOutputStream(file));
-				out.writeObject(Professores);
+				out.writeObject(departamentos);
 				out.close();
 			} else {
 				
@@ -44,13 +44,13 @@ public class ArquivarProf {
 		}
 	}
 	
-	public List<Professor> recuperar(){
-		List<Professor> listaux = new ArrayList<Professor>();
+	public List<Departamento> recuperar(){
+		List<Departamento> listaux = new ArrayList<Departamento>();
 		
 		try{
 			if(file.exists()){
 				in = new ObjectInputStream(new FileInputStream(file));
-				listaux = (List <Professor>)in.readObject();
+				listaux = (List <Departamento>)in.readObject();
 				in.close();
 			} else {
 				System.out.println("Problemas com o arquivo");

@@ -29,8 +29,8 @@ public class Professor extends Usuario implements Serializable{
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	public List<Projeto> getProjetos() {
-		return projetos;
+	public String getProjetos() {
+		return projetos.toString();
 	}
 	public void setProjetos(List<Projeto> projetos) {
 		this.projetos = projetos;

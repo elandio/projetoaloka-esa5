@@ -11,10 +11,9 @@ public class Crud {
 	private List<Departamento> departamentos = new ArrayList<Departamento>();
 	private List<Curso> cursos = new ArrayList<Curso>();
 	
-	//private ArquivarProf arquivo = new ArquivarProf();
+
 	public void addProfessor (Professor p){
 		professores.add(p);
-		//arquivo.salvar(p);
 	}
 	
 	public void addDisciplina (Disciplina d){
@@ -42,15 +41,21 @@ public class Crud {
 	}
 	
 	public int sizeDisciplinas(){
-		return disciplinas.size();
+		List<Disciplina> disciplinas2 = new ArrayList<Disciplina>();
+		disciplinas2 = CarregarDiscipl();
+		return disciplinas2.size();
 	}
 	
 	public int sizeCurso(){
-		return cursos.size();
+		List<Curso> cursos2 = new ArrayList<Curso>();
+		cursos2 = CarregarCurso();
+		return cursos2.size();
 	}
 	
 	public int sizeDepartamento(){
-		return departamentos.size();
+		List<Departamento> departamentos2 = new ArrayList<Departamento>();
+		departamentos2 = CarregarDepto();
+		return departamentos2.size();
 	}
 	
 	public void removerSecretario(String nome){
@@ -145,8 +150,10 @@ public class Crud {
 	
 	public boolean testCurso(String nome){
 		boolean result = false;
-		for(int i = 0;i< cursos.size(); ++i){
-			if(nome == cursos.get(i).getNome()){
+		List <Curso> cursos2 = new ArrayList<Curso>();
+		cursos2 = CarregarCurso();
+		for(int i = 0;i< cursos2.size(); ++i){
+			if(nome.equals(cursos2.get(i).getNome())){
 				result = true;
 			}
 			
@@ -155,8 +162,10 @@ public class Crud {
 	
 	public boolean testDepartamento(String nome){
 		boolean result = false;
-		for(int i = 0;i< CarregarDepto().size();++i){
-			if(nome == ((Departamento) CarregarDepto().get(i)).getNome()){
+		List<Departamento> departamentos2 = new ArrayList<Departamento>();
+		departamentos2 = CarregarDepto();
+		for(int i = 0;i< departamentos2.size();++i){
+			if(nome.equals((departamentos2.get(i)).getNome())){
 				result = true;
 			}
 		
@@ -199,13 +208,13 @@ public class Crud {
 		arqcurso.salvar(cursos);
 	}
 	
-	public String CarregarCurso(){
+	public List CarregarCurso(){
 		cursos = arqcurso.recuperar();
-		String aux = "Cursos:\n";
-		for(int i = 0;i< cursos.size();++i){
-			aux = aux+"\n"+"\n"+cursos.get(i).toString();
-		}
-		return aux;
+		//String aux = "Cursos:\n";
+		//for(int i = 0;i< cursos.size();++i){
+			//aux = aux+"\n"+"\n"+cursos.get(i).toString();
+		//}
+		return cursos;
 	}
 	
 private ArquivarDisciplina arqdisc = new ArquivarDisciplina();
@@ -214,13 +223,13 @@ private ArquivarDisciplina arqdisc = new ArquivarDisciplina();
 		arqdisc.salvar(disciplinas);
 	}
 	
-	public String CarregarDiscipl(){
+	public List CarregarDiscipl(){
 		disciplinas = arqdisc.recuperar();
-		String aux = "Disciplinas:\n";
-		for(int i = 0;i< disciplinas.size();++i){
-			aux = aux+"\n"+"\n"+disciplinas.get(i).toString();
-		}
-		return aux;
+		//String aux = "Disciplinas:\n";
+		//for(int i = 0;i< disciplinas.size();++i){
+			//aux = aux+"\n"+"\n"+disciplinas.get(i).toString();
+		//}
+		return disciplinas;
 	}
 	
 private ArquivarDepartamento arqdepto = new ArquivarDepartamento();

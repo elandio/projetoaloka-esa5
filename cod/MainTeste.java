@@ -52,14 +52,8 @@ public class MainTeste {
 							preferidas.add(d);
 							cont++;
 						}
-						p.setPreferidas(preferidas);
-						//int quant = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de Projetos que participa"));
-						//for (int i = 0; i< quant; i++){
-							//proj.setId(Integer.parseInt(JOptionPane.showInputDialog("Id do Projeto")));
-							//proj.setNome(JOptionPane.showInputDialog("Nome do projeto"));
-							//proj.setTipo(JOptionPane.showInputDialog("Tipo"));
-						//}
 						f.addProfessor(p);
+						p.setPreferidas(preferidas);
 						System.out.println("Professor Cadastrado com sucesso!!!");
 						f.ArquivoProf();
 			
@@ -95,11 +89,11 @@ public class MainTeste {
 								f.addCurso(c);
 								f.ArquivoCurso();
 								System.out.println("Curso cadastrado com sucesso");
-								}
+								}else
 								
 								System.out.println("Este Departamento não esta cadastrado!!!");
-			
 							}else
+					
 				
 								if(opcao == 4){
 									
@@ -127,6 +121,7 @@ public class MainTeste {
 										dpto.setNome(JOptionPane.showInputDialog("Nome do Departamento"));
 										f.addDepartamento(dpto);
 										f.ArquivoDepto();
+										System.out.println("Departamento cadastrado com sucesso!!!");
 									}else
 									
 									if(opcao == 6){

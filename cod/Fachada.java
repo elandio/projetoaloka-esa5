@@ -65,15 +65,15 @@ public class Fachada {
 	public void ArquivoCurso(){
 		c.ArquivoCurso();
 	}
-	public String CarregarCurso(){
-		return c.CarregarCurso();
-	}
+	//public String CarregarCurso(){
+		//return c.CarregarCurso();
+	//}
 	public void ArquivoDiscipl(){
 		c.ArquivoDiscipl();
 	}
-	public String CarregarDiscipl(){
-		return c.CarregarDiscipl();
-	}
+	//public String CarregarDiscipl(){
+		//return c.CarregarDiscipl();
+	//}
 	public void ArquivoDepto(){
 		c.ArquivoDepto();
 	}

@@ -44,7 +44,7 @@ public class Projeto implements Serializable{
 	}
 
 	public String toString() {
-		return "Projeto :" +this.getNome() ;
+		return "Projeto :" +this.getNome() + "    "+"Professor :" +this.getProfessor() +"\n";
 	}
 	
 }

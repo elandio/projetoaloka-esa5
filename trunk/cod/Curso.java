@@ -18,6 +18,10 @@ public class Curso implements Serializable{
 		this.departamento = departamento;
 	}
 	
+	public String dpto(){
+		return this.getDepartamento().getNome();
+	}
+	
 	public Curso(){
 		
 	}
@@ -48,8 +52,8 @@ public class Curso implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Curso [nome=" + nome + ", disciplinas=" + disciplinas.toString()
-				+ ", departamento=" + departamento.toString() + "]";
+		return "Curso [nome=" + this.getNome() +"  "
+				 + this.getDepartamento().toString() + "]"+"\n";
 	}
 
 }

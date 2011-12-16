@@ -51,8 +51,7 @@ public class Departamento implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Departamento [nome=" + nome + ", professores=" + professores.toString()
-				+ ", secretarios=" + secretarios.toString() + ", cursos=" + cursos.toString() + "]";
+		return "Departamento [nome=" + this.getNome() + "]"+"\n";
 	}
 
 	

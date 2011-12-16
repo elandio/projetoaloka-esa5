@@ -15,14 +15,39 @@ public class Professor extends Usuario implements Serializable{
 	public Professor(){
 		
 	}
-
+	
+	private int quantDisciplina=0;
+	private int quantProj=0;
 
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	private List<Disciplina> preferidas = new ArrayList<Disciplina>();
 	private List<Projeto> projetos = new ArrayList<Projeto>();
 	
+	public void incr(){
+		quantProj=quantProj +1;
+	}
+	
+	public void decr(){
+		quantProj=quantProj -1;
+	}
 	
 	
+	public int getQuantDisciplina() {
+		return quantDisciplina;
+	}
+
+	public void setQuantDisciplina(int quantDisciplina) {
+		this.quantDisciplina = quantDisciplina;
+	}
+
+	public int getQuantProj() {
+		return quantProj;
+	}
+
+	public void setQuantProj(int quantProj) {
+		this.quantProj = quantProj;
+	}
+
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
@@ -47,7 +72,7 @@ public class Professor extends Usuario implements Serializable{
 		return "Professor ["+"Nome: "+this.getNome()+"\n"
 		+"e-mail: "+this.getEmail()+"\n"
 		+"Matricula: "+this.getMatricula()+"\n"
-		+"Disciplinas Preferidas:"+this.getPreferidas()+ "]";
+		+"Disciplinas Preferidas: "+this.getPreferidas()+"]"+"\n";
 	}
 	
 	

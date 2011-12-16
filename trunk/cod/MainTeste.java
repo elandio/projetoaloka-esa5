@@ -6,11 +6,19 @@ import javax.swing.JOptionPane;
 
 public class MainTeste {
 	public static void main(String[] args) {
-	
+		
+		String username = "";
+		String password = "";
+		
 		Crud crud = new Crud();
 		Fachada f = new Fachada();
 		int opcao = 10;
 		int opc = 10;
+		
+		username = JOptionPane.showInputDialog("Digite o Username:");
+		if(f.ConfereUsername(username)){
+			password = JOptionPane.showInputDialog("Digite o Password:");
+			if(f.ConferePassword(password)){
 		
 		while(opc != 0){
 			
@@ -18,6 +26,7 @@ public class MainTeste {
 				"\n1 Para Cadastrar"+
 				"\n2 Para Remover"+
 				"\n3 Para Pesquisar"+
+				"\n4 Alocar professor na disciplina"+
 				"\n0 Para Sair do Sistema"));
 			
 			if(opc == 1){
@@ -37,14 +46,11 @@ public class MainTeste {
 				
 						int cont=1;
 						Professor p = new Professor();
-						Projeto proj = new Projeto();
-						p.setNome(JOptionPane.showInputDialog("Nome"));
-						p.setPassword(JOptionPane.showInputDialog("Password"));
-						p.setUsername(JOptionPane.showInputDialog("Username"));
+						String nome = JOptionPane.showInputDialog("Nome");
+						if(f.ComparaProf(nome)==false){
+						p.setNome(nome);
 						p.setMatricula(JOptionPane.showInputDialog("Matricula"));
 						p.setEmail(JOptionPane.showInputDialog("E-mail"));
-						p.setTipo(JOptionPane.showInputDialog("Escolha o tipo como:" +
-								"admin/manager/ou usuario basico"));
 						List<Disciplina> preferidas = new ArrayList<Disciplina>();
 						while(cont<=3){
 							Disciplina d = new Disciplina();
@@ -52,10 +58,11 @@ public class MainTeste {
 							preferidas.add(d);
 							cont++;
 						}
-						f.addProfessor(p);
 						p.setPreferidas(preferidas);
+						f.addProfessor(p);
 						System.out.println("Professor Cadastrado com sucesso!!!");
-						f.ArquivoProf();
+						}else
+							System.out.println("Este professor ja está cadastrado");
 			
 					}else
 			
@@ -63,35 +70,39 @@ public class MainTeste {
 			
 							Secretario s = new Secretario();
 							s.setNome(JOptionPane.showInputDialog("Nome"));
+							String usernome = JOptionPane.showInputDialog("Username");
+							if(f.ComparaSecr(usernome)==false){
+							s.setUsername(usernome);
 							s.setPassword(JOptionPane.showInputDialog("Password"));
-							s.setUsername(JOptionPane.showInputDialog("Username"));
 							s.setMatricula(JOptionPane.showInputDialog("matricula"));
 							s.setEmail(JOptionPane.showInputDialog("email"));
-							s.setTipo(JOptionPane.showInputDialog("Escolha o tipo como:" +
-									"admin/manager/ou usuario basico"));
 							s.setTelefone(JOptionPane.showInputDialog("Telefone"));
 							f.addSecretario(s);
 							System.out.println("Secretario Cadastrado com sucesso!!!");
-							f.ArquivoSecr();
-			
+							}else
+								System.out.println("Este Username já existe");
+								
 						}else
 							
 							if(opcao == 3){
 				
 								Curso c = new Curso();
 								Departamento d = new Departamento();
-								c.setNome(JOptionPane.showInputDialog("Nome do curso"));
+								String nome = JOptionPane.showInputDialog("Nome do curso");
+								c.setNome(nome);
 									String dpto = JOptionPane.showInputDialog("Departamento que o curso pertence");
 									boolean pesquisa = f.testDepartamento(dpto);
-								if (pesquisa){
-								d.setNome(dpto);
-								c.setDepartamento(d);
-								f.addCurso(c);
-								f.ArquivoCurso();
-								System.out.println("Curso cadastrado com sucesso");
+								if(f.ComparaCurso(nome,dpto)==false){
+									if (pesquisa == true){
+										d.setNome(dpto);
+										c.setDepartamento(d);
+										f.addCurso(c);
+										System.out.println("Curso cadastrado com sucesso");
+									}else
+										System.out.println("Este Departamento não esta cadastrado!!!");
 								}else
-								
-								System.out.println("Este Departamento não esta cadastrado!!!");
+									System.out.println("Este curso já está cadastrado");
+							
 							}else
 					
 				
@@ -100,42 +111,58 @@ public class MainTeste {
 									String curso = "";
 									Disciplina dis = new Disciplina();
 									Curso c = new Curso();
-									dis.setNome(JOptionPane.showInputDialog("Nome da Disciplina"));
+									String nome = JOptionPane.showInputDialog("Nome da Disciplina");
+									dis.setNome(nome);
 									 curso = JOptionPane.showInputDialog("Curso da Disciplina");
 									 boolean pesquisa = f.testCurso(curso);
-									if (pesquisa == true){
-										c.setNome(curso);
-										dis.setCurso(c);
-										f.addDisciplina(dis);
-										f.ArquivoDiscipl();
+									 if(f.ComparaDisciplina(nome,curso)==false){
+										 if (pesquisa == true){
+											 c.setNome(curso);
+											 dis.setCurso(c);
+											 f.addDisciplina(dis);
 										System.out.println("Disciplina cadastrada com sucesso");
-									}else
-										
-										System.out.println("Este curso não está cadastrado!!!");
-			
+										 }else
+											 System.out.println("Este curso não está cadastrado!!!");
+									 }else
+										 System.out.println("Esta disciplina já está cadastrada");
+										 
 								}else
 									
 									if(opcao == 5){
 										
 										Departamento dpto = new Departamento();
-										dpto.setNome(JOptionPane.showInputDialog("Nome do Departamento"));
+										String nome = JOptionPane.showInputDialog("Nome do Departamento");
+										if(f.ComparaDepto(nome)==false){
+										dpto.setNome(nome);
 										f.addDepartamento(dpto);
-										f.ArquivoDepto();
 										System.out.println("Departamento cadastrado com sucesso!!!");
+										}else
+											System.out.println("Este departamento já está cadastrado");
+											
 									}else
 									
 									if(opcao == 6){
 									
 										Projeto proj = new Projeto();
-										proj.setId(Integer.parseInt(JOptionPane.showInputDialog("Id do Projeto:")));
-										proj.setNome(JOptionPane.showInputDialog("Nome do Projeto:"));
-										String professor = JOptionPane.showInputDialog("Professor:");
-										if(f.pesquisarProfessor(professor).equals(professor)){
-										proj.setProfessor(professor);
-										System.out.println("Projeto cadastrado com sucesso");
-										}
-										System.out.println("Este professor não esta cadastrado!!!");
+										Professor p = new Professor();
+										proj.setId(Integer.parseInt(JOptionPane.showInputDialog("Id do Projeto:\n"+"Obs:Tem que ser um numero!!!")));
+										String nome = JOptionPane.showInputDialog("Nome do Projeto:");
+										if(f.ComparaProj(nome)==false){
+											proj.setNome(nome);
+											String professor = JOptionPane.showInputDialog("Professor:");
+											if(f.ConfereProfParaProj(professor, nome)){
+												proj.setProfessor(professor);
+												f.addProjeto(proj);
+												//crud.ArquivoProf();
+												System.out.println("Projeto cadastrado com sucesso");
+											}else
+											System.out.println("Este professor ainda não está cadastrado ou ja está em dois projetos!!!");
+										}else
+											System.out.println("Este projeto já está cadastrado");
+										
 									}
+									
+										
 			
 			}
 				if(opc == 2){
@@ -153,38 +180,47 @@ public class MainTeste {
 				
 							if(opcao == 1){
 								
+								if(f.sizeProfessor()>0){
 								String remove = JOptionPane.showInputDialog("Digite o nome do Professor que deseja remover");
 								f.removerProfessor(remove);
+								System.out.println("Professor removido com sucesso!!!");
+								}else
+									System.out.println("Não tem professor cadastrado!!!");
 							}
 							
 							if(opcao == 2){
 								
 								String remove = JOptionPane.showInputDialog("Digite o nome do Secretario que deseja remover");
 								f.removerSecretario(remove);
+								System.out.println("Secretario removido com sucesso!!!");
 							}
 							
 							if(opcao == 3){
 								
 								String remove = JOptionPane.showInputDialog("Digite o nome do Curso que deseja remover");
 								f.removerCurso(remove);
+								System.out.println("Curso removido com sucesso!!!");
 							}
 							
 							if(opcao == 4){
 								
 								String remove = JOptionPane.showInputDialog("Digite o nome do Disciplina que deseja remover");
-								f.removerDepartamento(remove);
+								f.removerDisciplina(remove);
+								System.out.println("Disciplina removida com sucesso!!!");
 							}
 							
 							if(opcao == 5){
 								
 								String remove = JOptionPane.showInputDialog("Digite o nome do Departamento que deseja remover");
 								f.removerDepartamento(remove);
+								System.out.println("Departamento removido com sucesso!!!");
 							}
 							
 							if(opcao == 6){
 								
 								String remove = JOptionPane.showInputDialog("Digite o nome do Projeto que deseja remover");
-								//f.removerProjeto(remove);
+								f.removerProj(remove);
+								System.out.println("Projeto removido com sucesso!!!");
 							}
 							
 					}
@@ -212,50 +248,90 @@ public class MainTeste {
 								if(opcao == 2){
 									
 									String nome = JOptionPane.showInputDialog("Digite o nome do Secretario que deseja Pesquisar");
-									f.pesquisarSecretario(nome);
+									System.out.println(f.pesquisarSecretario(nome));
 								}
 								
 								if(opcao == 3){
 									
 									String nome = JOptionPane.showInputDialog("Digite o nome do Curso que deseja Pesquisar");
-									f.pesquisarCurso(nome);
+									System.out.println(f.pesquisarCurso(nome));
 								}
 								
 								if(opcao == 4){
 									
 									String nome = JOptionPane.showInputDialog("Digite o nome da Disciplina que deseja Pesquisar");
-									f.pesquisarDisciplina(nome);
+									System.out.println(f.pesquisarDisciplina(nome));
 								}
 								
 								if(opcao == 5){
 									
 									String nome = JOptionPane.showInputDialog("Digite o nome do Departamento que deseja Pesquisar");
-									f.pesquisarDepartamento(nome);
+									System.out.println(f.pesquisarDepartamento(nome));
 								}
 								
 								if(opcao == 6){
 									
 									String nome = JOptionPane.showInputDialog("Digite o nome do Projeto que deseja Pesquisar");
-									//f.pesquisarProjeto(nome);
+									System.out.println(f.pesquisarProj(nome));
 								}
 						}
+					
+					if(opc == 4){
+						
+						List<Professor> professores = new ArrayList<Professor>();
+						professores = crud.CarregarProf();
+						
+						for(int i = 0; i< professores.size();++i){
+							System.out.println("Professor: "+professores.get(i).getNome()+"\n"
+						+"Disciplinas preferidas: "+professores.get(i).getPreferidas()+"\n"
+						+"Quant. diciplinas alocadas pra ele: "+professores.get(i).getQuantDisciplina()+"\n");
+						}
+						
+						String professor = JOptionPane.showInputDialog("Coloque o nome do professor: ");
+						String disciplina = JOptionPane.showInputDialog("Coloque o nome da disciplina de acordo com suas preferidas: ");
+						if(f.ConfereDisciplina(disciplina)){
+							if(f.ConfereProf(professor)){  		
+								Turma t = new Turma();
+								t.setProfessor(professor);
+								t.setDisciplina(disciplina);
+								f.addTurma(t);
+								System.out.println("Turma cadastrada com sucesso");
+							}else
+							System.out.println("Este professor ja tem duas disciplinas");
+						}else
+							System.out.println("Esta disciplina já está alocada");
+					}
 					}
 		
 		System.out.println("----------------------------------------------------");
-		System.out.println(f.CarregarProf());
+		System.out.println(crud.CarregarProf());
 		System.out.println("----------------------------------------------------");
-		System.out.println(f.CarregarSecr());
+		System.out.println(crud.CarregarSecr());
 		System.out.println("----------------------------------------------------");
-		//System.out.println(f.CarregarCurso());
+		System.out.println(crud.CarregarCurso());
 		System.out.println("----------------------------------------------------");
-		//System.out.println(f.CarregarDiscipl());
+		System.out.println(crud.CarregarDiscipl());
 		System.out.println("----------------------------------------------------");
-		//System.out.println(f.CarregarDepto());
+		System.out.println(crud.CarregarDepto());
 		System.out.println("----------------------------------------------------");
-		//System.out.println(f.sizeProfessor());
-		System.out.println(f.sizeDepartamento());
-		System.out.println(f.sizeCurso());
-		System.out.println(f.sizeDisciplinas());
+		System.out.println(crud.CarregarProj());
+		System.out.println("----------------------------------------------------");
+		System.out.println(crud.CarregarTurmas());
+		System.out.println("----------------------------------------------------");
+		
+		System.out.println("Quant. de professores: "+f.sizeProfessor());
+		System.out.println("Quant. de secretarios: "+f.sizeSecretario());
+		System.out.println("Quant. de departamentos: "+f.sizeDepartamento());
+		System.out.println("Quant. de cursos: "+f.sizeCurso());
+		System.out.println("Quant. de disciplinas: "+f.sizeDisciplinas());
+		System.out.println("Quant. de projetos: "+f.sizeProjeto());
+		System.out.println("Quant. de turmas: "+f.sizeTurma());
+		
+			}else
+				System.out.println("Password invalido!!!");
+		}else
+			System.out.println("Username invalido!!!");
+		
 	}
-
+	
 }

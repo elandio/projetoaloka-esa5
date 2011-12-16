@@ -5,6 +5,7 @@ public class Disciplina implements Serializable{
 	
 	String nome;
 	Curso curso;
+	boolean alocada = false;
 	
 	public Disciplina() {
 		
@@ -14,6 +15,10 @@ public class Disciplina implements Serializable{
 		super();
 		this.nome = nome;
 		this.curso = curso;
+	}
+	
+	public String nomecurso(){
+		return this.getCurso().getNome();
 	}
 
 	public String getNome() {
@@ -31,10 +36,24 @@ public class Disciplina implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	
+
+	public boolean isAlocada() {
+		return alocada;
+	}
+
+	public void setAlocada(boolean alocada) {
+		this.alocada = alocada;
+	}
 
 	@Override
 	public String toString() {
-		return "Disciplina [nome=" + nome  +"]";
+		return "Disciplina [nome=" + this.getNome() +"]"+"\n";
+	}
+	
+	public String toString2() {
+		return "Disciplina [nome=" + this.getNome() +"   "+"Curso: " + this.nomecurso()+"]"+"\n";
 	}
 
 	

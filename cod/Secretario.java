@@ -17,7 +17,7 @@ public class Secretario extends Usuario implements Serializable{
 		return "Secretario ["+"Nome: "+this.getNome()+"\n"
 		+"e-mail: "+this.getEmail()+"\n"
 		+"Matricula: "+this.getMatricula()+"\n"
-		+"Telefone: "+this.getTelefone()+"]";
+		+"Telefone: "+this.getTelefone()+"]"+"\n";
 	}
 
 	public Secretario(String username, String password, Object tipo,
